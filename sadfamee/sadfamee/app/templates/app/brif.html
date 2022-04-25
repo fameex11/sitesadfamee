@@ -1,0 +1,44 @@
+
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+<script>
+    window.onload = function () {
+        $('.form-control, .btn').hover(function () {
+            el = $(this)[0];
+            el.style.backgroundColor = 'lightgreen';
+        }, function () {
+            el = $(this)[0];
+            el.style.backgroundColor = 'white';
+        })
+    }
+</script>
+<div class="div_form">
+    {% if form != None %}
+    <div class="form">
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-outline-success">Отправить</button>
+            <button type="reset" class="btn btn-outline-warning">Очистить</button>
+        </form>
+    </div>
+    {% else %}
+    <h2>Спасибо за отзыв!</h2>
+    <div class="div_form" style="margin-top: 2%">
+        <ul>
+            <li><span>Имя: </span> {{ data.name }}</li>
+            <li><span>Город: </span> {{ data.city }}</li>
+            <li><span>Пол: </span> {{ data.gender }}</li>
+            <li><span>Отзыв: </span> {{ data.message }}</li>
+            <li><span>Отправить ответ: </span> {{ data.answer }}</li>
+            <li><span>e-mail: </span> {{ data.email }}</li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

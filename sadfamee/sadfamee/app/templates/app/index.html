@@ -1,0 +1,110 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<img src="{% static 'app/content/5.png' %}" style="width:100%" />
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" style="width:70%; margin-left:15%">
+
+    <ol class="carousel-indicators">
+
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+
+            <img src="{% static 'app/content/banner1.png'%} " alt="Первый слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    Что такое таргетированная реклама?
+
+                    <a class="btn btn-default" href="https://www.calltouch.ru/glossary/targetirovannaya-reklama/">
+
+                        Читать далее
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src="{% static 'app/content/banner2.png'%}" alt="Второй слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    Для чего нужна таргетированная реклама?
+
+                    <a class="btn btn-default" href="https://smart-estet.ru/articles/zachem-nuzhna-targetirovannaya-reklama-i-ee-preimuschestva">
+
+                        Читать далее
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src=" {% static 'app/content/banner3.png'%} " alt="Третий слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    Что нужно для того, чтобы заняиматься таргетом?
+
+                    <a class="btn btn-default" href="https://gutnik.pro/stati/kak-nachat-zanimatsya-targetom-i-chto-nuzhno-znat-nachinayushhim/">
+
+                        Читать далее
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+        <span class="sr-only">Previous</span>
+
+    </a>
+
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+        <span class="sr-only">Next</span>
+
+    </a>
+
+</div>
+
+
+{% endblock %}

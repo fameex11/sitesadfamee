@@ -1,0 +1,36 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% if user.is_superuser %}
+
+<a class="btn btn-warning" href="{% url 'create' %}">Создать блог</a>
+
+{% endif %}
+
+{% if lastblogs %}
+
+{% for blog in lastblogs %}
+
+<div class="blockpost">
+    <div class="blocks">
+        <div class="block0">
+            <figure>
+                <a><img src="{{ blog.image.url }}"></a>
+            </figure>
+        </div>
+        <div class="block1">
+            <a style="font-size: 28px;"><i>{{ blog.title }}</i></a>
+            <a style="align-self:flex-start;">{{ blog.description }}</a>
+            <a style="align-self:flex-end;">{{ blog.posted }}</a>
+            <a style="align-self:flex-end;">Автор: {{ blog.author }}</a>
+            <a style="align-self:flex-end;" href="{% url 'detals' blog.id %}">Читать далее</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}

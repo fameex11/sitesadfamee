@@ -1,0 +1,78 @@
+body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+    background: -webkit-linear-gradient(0deg, rgb(84, 172, 219), rgb(135, 197, 246) 30%);
+    background: -moz-linear-gradient(0deg, rgb(84, 172, 219), rgb(135, 197, 246) 30%);
+    background: linear-gradient(0deg, rgb(84, 172, 219), rgb(135, 197, 246) 30%);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.blockpost {
+    transition: all 400ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 3px;
+    margin-top: 5%;
+    margin-left: 10%;
+    background: linear-gradient(90deg, #f598a8, #f6edb2) no-repeat;
+    justify-content: space-around;
+}
+
+    .blockpost:hover {
+        -webkit-transition: background 0.5s ease transition: all 400ms ease-in-out;
+        box-shadow: 0 0 20px gray inset, 0 0 0 0 black;
+        background: linear-gradient(90deg, #f598a8, #f6edb2) no-repeat;
+    }
+
+figure img {
+    float: left;
+    margin: 1% 2% 1% 1%;
+    width: 30%;
+}
+
+.block1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 1%;
+}
+

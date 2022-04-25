@@ -1,0 +1,13 @@
+﻿{% extends "app/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<p>Краткая информация.</p>
+<img src="{% static 'app/content/2.jpg' %}" style="width:50%" />
+
+{% endblock %}

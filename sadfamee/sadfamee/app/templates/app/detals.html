@@ -1,0 +1,68 @@
+﻿{% extends "app/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<a class="btn btn-danger" href="{% url 'blogs' %}">Назад</a>
+
+{% if user.is_superuser %}
+
+<a class="btn btn-warning" onclick="document.location='redakt'"">Редактировать</a>
+
+{% endif %}
+
+<br>
+<br />
+
+{{ blog.title }}
+
+<br>
+<br />
+
+{{ blog.description }}
+
+<br>
+<br />
+
+{{ blog.content }}
+
+<br>
+<br />
+
+{{ blog.posted }}
+
+<br>
+<br />
+
+{{ blog.author }}
+
+<br>
+<br />
+{% if user.is_authenticated %}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success"> Отправить комментарий </button>
+</form>
+<div class="put_com" style="display: flex; justify-content: space-between; width: 96%; margin-left: 2%; margin-bottom: 2%;">
+    <a style="font-size: 20px">Комменратии:</a>
+</div>
+{% else %}
+<h3> Для добавления своего комментария, пожалуйста, авторизуйтесь. </h3>
+{% endif %}
+{% if comments %}
+{% for comment in comments %}
+{% if comment in blog.comment_set.all %}
+<div class="block_com">
+    <a style="margin: 1% 2% 0 1%;"><strong> {{ comment.author }}</strong> {{ comment.posted }}</a>
+    <a style="font-size: 18px; margin: 0 2% 1% 2%;"><i>{{ comment.text|linebreaks }}</i></a>
+    <a></a>
+</div>
+{% endif %}
+{% endfor %}
+{% else %}
+<p style="margin-left: 2%;">Здесь пока нет комментариев.</p>
+{% endif %}
+
+{% endblock %}

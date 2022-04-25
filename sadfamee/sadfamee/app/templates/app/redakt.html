@@ -1,0 +1,22 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="features">
+    <h1>
+        Редактирование Блога
+    </h1>
+    <div class="div_form">
+        <div class="form">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.title }}<br>
+                {{ form.description }}<br>
+                {{ form.content }}<br>
+                {{ form.image }}<br><br>
+                {{ form.posted }}<br><br>
+                <button class="btn btn-success" onclick="document.location='./'" type="submit">Изменить блог</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

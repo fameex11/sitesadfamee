@@ -1,0 +1,24 @@
+﻿{% extends "app/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<address>
+    Россия<br />
+    Псков, ул. Юбилейная, д. 69<br />
+    <abbr title="Телефон">Тел:</abbr>
+    +79532465394
+</address>
+
+<address>
+    <strong>Вопросы:</strong>   <a href="mailto:ivanovalex11@bk.ru">ivanovalex11@bk.ru</a><br />
+    <strong>Мои соц. сети:</strong>
+    <br /> ВК <a href="https://vk.com/impressive11"><img src="{% static 'app/content/4.png' %}"  style="width:25px"/></a><br />
+           Инстаграм <a href="https://instagram.com/sadfamee"><img src="{% static 'app/content/3.png' %}" style="width:25px"  /></a><br />
+</address>
+
+{% endblock %}
